@@ -43,6 +43,28 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+  <!-- <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+  <script type="text/x-mathjax-config;executed=true">
+    window.MathJax.Hub.Config({
+        showProcessingMessages: false, //关闭js加载过程信息
+        messageStyle: "none", //不显示信息
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+            skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+        },
+        "HTML-CSS": {
+            availableFonts: ["STIX", "TeX"], //可选字体
+            showMathMenu: false //关闭右击菜单显示
+        }
+    });
+    //下面第三个参数可以不写，默认对整个html内的latex进行翻译
+    window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  </script>
+
 </head>
 <body>
 
@@ -52,29 +74,36 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">HMC: Hierarchical Mesh Coarsening for Skeleton-free Motion Retargeting</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+                <a href="https://orcid.org/0000-0002-3357-0080" target="_blank">Haoyu Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=o31BPFsAAAAJ" target="_blank">Shaoli Huang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=4C7mvOwAAAAJ" target="_blank">Fang Zhao</a><sup>2</sup>,</span>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=fYdxi2sAAAAJ" target="_blank">Chun Yuan</a><sup>1</sup>,</span>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=4oXBp9UAAAAJ" target="_blank">Ying Shan</a><sup>3</sup>
+              </span>
                   </div>
-
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Tencent AI Lab, <sup>3</sup>Tencent</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
+                        <!-- <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark"> -->
+                        <a href="static/pdfs/hmc_main_paper_cached.pdf" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
@@ -83,7 +112,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,11 +120,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/HoeTosaki/HMC_repo" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -106,7 +135,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -129,11 +158,11 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/test_5.25.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        HMC shows a simple yet effective way of better handling local-part motions in the skeleton-free motion retaregting task, and it also fixes many failure cases in previous literature regarding small-part motions and local-motion interdependencies.
       </h2>
     </div>
   </div>
@@ -148,7 +177,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            We present a simple yet effective method for skeleton-free motion retargeting. Previous methods transfer motion between high-resolution meshes, 
+            failing to preserve the inherent local-part motions in the mesh. Addressing this issue, our proposed method learns the correspondence 
+            in a coarse-to-fine fashion by integrating the retargeting process with a mesh-coarsening pipeline. 
+            First, we propose a mesh-coarsening module that coarsens the mesh representations for better motion transfer. 
+            This module improves the ability to handle small-part motion and preserves the local motion interdependence between neighboring mesh vertices. 
+            Furthermore, we leverage a hierarchical refinement procedure to complement missing mesh details by gradually improving the 
+            low-resolution mesh output with a higher-resolution one. We evaluate our method on several well-known 3D character datasets, 
+            and it yields an average improvement of 25% on point-wise mesh euclidean distance (PMD) against the start-of-art method. 
+            Moreover, our qualitative results show that our method is significantly helpful in preserving the moving consistency of 
+            different body parts on the target character due to disentangling body-part structures and mesh details in a hierarchical way.
           </p>
         </div>
       </div>
@@ -165,31 +203,46 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <img src="static/images/title_img.jpg" alt="MY ALT TEXT"/>
+        <h3 class="subtitle has-text-centered">
+          <b>Fig. 1</b> Skeleton-free motion retargeting from an input source motion to the target character. 
+          <b>Left:</b> Source motion is animated on a <a href="https://www.mixamo.com/#/">Mixamo</a> character, and the target character is selected in RigNet dataset. 
+          The skeletal rigging and skinning on both of the input characters are agnostic during inference. 
+          <b>Right:</b> Comparison between <a href="https://zycliao.com/sfpt/">SfPT</a> (the SOTA method) and ours shows the superior performance of our model on 
+          handling small-part motions and preserving local motion interdependence. 
+          Thereinto, <font color=#FA7F6F>red bubble</font> reflects the consistency of the right hand's direction between the source and target characters.
+          <font color=#82B0D2>blue bubble</font> reflects local motion independence between the leg and skirt (i.e., whether leg-skirt interpenetration occurs). 
+        </h3>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+        <img src="static/images/pipeline1.jpg" alt="MY ALT TEXT"/>
+        <h3 class="subtitle has-text-centered">
+          <b>Fig. 2</b> Overview. The network takes as input the rest and pose meshes of the source character, and the rest mesh of the target character 
+          (i.e., \({\mathbf {\bar V}}^{(0)}_S\), \(\mathbf V^{(0)}_S\) and \(\mathbf {\bar V}^{(0)}_T\)), and then outputs the target pose mesh. 
+          Instead of intuitively determining correspondence between the input HR meshes, 
+          we leverage a mesh-coarsening module to recursively coarsen the mesh representations for better motion transfer.
+          Owing much to the differentiable assignments (i.e., \({\mathbf A}^{\cdot}_{T,inv}\)) constructed by the mesh-coarsening module, 
+          the output LR pose mesh \(\mathbf {\tilde V}^{(K)}_T\) can be gradually refined by applying local deformations 
+          \(\{ \mathbf {J}^{(k)}_T, \mathbf W^{(k)}_T\}_{k=0}^{K-1}\) learned from higher-resolution meshes.
+        </h3>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
+        <img src="static/images/pipeline_img2.png" alt="MY ALT TEXT"/>
+        <h3 class="subtitle has-text-centered">
+          <b>Fig. 3</b> Design of retargeting process at every resolution. Each retargeting layer contains three modules, including Pose Encoder, Pose Decoder, and Skinning Predictor. 
+          Thereinto, Pose Encoder captures vertex-wise pose information (i.e., \(\mathbf E^k_S\) and \(\mathbf {\bar E}^k_S\)) of a given mesh, 
+          while Skinning Predictor predicts potential skinning weights of each vertex, paving the way for aggregating part-level pose embedding. 
+          Finally, Pose Decoder decodes the deformation of each part \(\mathbf{\tilde J}^k_T\) related to the skinning weights of a target mesh \(\mathbf W^k_T\).
+       </h3>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+      <img src="static/images/exp_visual.jpg" alt="MY ALT TEXT"/>
+      <h3 class="subtitle has-text-centered">
+        <b>Fig. 4</b> Visualization results of motion and pose retargeting. <b>Columns from left to right</b> are different pairs of characters for motion or pose retargeting.
+      </h3>
     </div>
   </div>
 </div>
@@ -201,49 +254,43 @@
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -251,7 +298,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +307,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,15 +317,22 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{haoyu2023hmc,
+        title={HMC: Hierarchical Mesh Coarsening for Skeleton-free Motion Retargeting}, 
+        author={Haoyu Wang, Shaoli Haung, Fang Zhao, Chun Yuan, Ying Shan},
+        year={2023},
+        eprint={2303.09406},
+        archivePrefix={arXiv},
+        primaryClass={q-fin.ST}
+  }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
